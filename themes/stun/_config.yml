@@ -52,8 +52,9 @@ sougou_site_verification:
 menu:
   home: / || fas fa-home
   archives: /archives/ || fas fa-folder-open
-  # categories: /categories/ || fas fa-layer-group
-  # tags: /tags/ || fas fa-tags
+  categories: /categories/ || fas fa-layer-group
+  tags: /tags/ || fas fa-tags
+  # reading: /reading/ || fas fa-book
   # You can add a secondary menu like follow.
   # xxx1: javascript:; || fa(s|r|l|d|b) fa-xxx
 
@@ -75,14 +76,14 @@ menu_settings:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/icons/favicon-16x16.png
-  medium: /images/icons/favicon-32x32.png
+  small: /assets/favicon-16x16.png
+  medium: /assets/favicon-32x32.png
   # ! --------------------------------------------------
   # ! If you don't know the following, please ignore it.
   # ! --------------------------------------------------
-  # apple_touch_icon: /images/icons/apple-touch-icon.png
-  # safari_pinned_tab: /images/icons/stun-logo.svg
-  # msapplication: /images/icons/favicon-144x144.png
+  apple_touch_icon: /images/icons/apple-touch-icon.png
+  safari_pinned_tab: /images/icons/stun-logo.svg
+  msapplication: /images/icons/favicon-144x144.png
 
 # Progressive Web Apps
 # See: https://github.com/lavas-project/hexo-pwa/
@@ -133,16 +134,16 @@ header:
   enable: true
   show_on:
     # Whether to show on the article page.
-    post: true
+    post: false
   # If you set a percentage, it will be calculated based on the height of screen (Supports all CSS units)
-  height: 80%
+  height: 45%
   # Background image of site header.
   bg_image:
-    enable: false
+    enable: true
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url:
+    url: /images/header5.jpg
   # Mask effect of the background image.
   mask:
     enable: false
@@ -155,7 +156,7 @@ header:
     bg_color: "#333"
   # The icon that prompts the user to pull down.
   scroll_down_icon:
-    enable: false
+    enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/icons
     name: fas fa-angle-down
     animation: true
@@ -164,11 +165,11 @@ header:
 body:
   # Background image of site body.
   bg_image:
-    enable: false
+    enable: true
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url:
+    url: 
     # Whether to fixed the background image.
     fixed: true
     # Whether to repeat the image as much as possible to cover the entire area.
@@ -273,7 +274,7 @@ back2top:
 sidebar:
   enable: true
   # Optional values: left | right
-  position: right
+  position: left
   # The distance from the top of the page when the sidebar is fixed (Only `px` unit is supported)
   offsetTop: 20px
   # Whether to show horizon line.
@@ -286,14 +287,14 @@ author:
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url: /images/icons/stun-logo.svg
+    url: /images/profile.jpeg
     # If true, the avatar would be displayed in a circle.
-    rounded: false
+    rounded: true
     # Opacity of avatar (value: 0 ~ 1)
     opacity: 1
     # Mouse hover animation
     # Optional values: turn | shake
-    animation: turn
+    animation: shake
   # Your favorite motto.
   motto: hello world
 
@@ -305,9 +306,9 @@ author:
 # e.g. `origin:sf`, so `sf` will be displayed.
 social:
   github: https://github.com/ || fab fa-github
-  google: https://plus.google.com/ || fab fa-google
-  twitter: https://twitter.com/ || fab fa-twitter
-  youtube: https://youtube.com/ || fab fa-youtube
+  # google: https://plus.google.com/ || fab fa-google
+  # twitter: https://twitter.com/ || fab fa-twitter
+  # youtube: https://youtube.com/ || fab fa-youtube
   # segmentfault: https://segmentfault.com/ || origin:sf
   # weibo: https://weibo.com/ || fab fa-weibo
   # zhihu: https://www.zhihu.com/ || origin:知
@@ -316,7 +317,7 @@ social:
   # qq: yournumber || fab fa-qq
 
 social_setting:
-  enable: false
+  enable: true
   # Only show by icon.
   icon_only: true
 
