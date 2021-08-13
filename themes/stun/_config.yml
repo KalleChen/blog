@@ -296,7 +296,7 @@ author:
     # Optional values: turn | shake
     animation: shake
   # Your favorite motto.
-  motto: hello world
+  motto: Just for fun!
 
 # Social links
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
@@ -305,7 +305,9 @@ author:
 # If you can`t find a suitable icon, you can choose to display text by adding the `origin:` prefix.
 # e.g. `origin:sf`, so `sf` will be displayed.
 social:
-  github: https://github.com/ || fab fa-github
+  email: mailto:chen1082yo@gmail.com || fas fa-envelope
+  github: https://github.com/KalleChen || fab fa-github
+  linkedin: https://www.linkedin.com/in/chia-yu-chen-429459199/ || fab fa-linkedin
   # google: https://plus.google.com/ || fab fa-google
   # twitter: https://twitter.com/ || fab fa-twitter
   # youtube: https://youtube.com/ || fab fa-youtube
@@ -535,8 +537,8 @@ livere:
 # Disqus
 # See: https://disqus.com/
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: kalles-space
   count: true
 
 # Utterances
