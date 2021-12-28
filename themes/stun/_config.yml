@@ -51,9 +51,9 @@ sougou_site_verification:
 # Select your icon name, see: https://fontawesome.com/icons
 menu:
   home: / || fas fa-home
-  archives: /archives/ || fas fa-folder-open
-  categories: /categories/ || fas fa-layer-group
-  tags: /tags/ || fas fa-tags
+  archives: /blog/archives/ || fas fa-folder-open
+  categories: /blog/categories/ || fas fa-layer-group
+  tags: /blog/tags/ || fas fa-tags
   # reading: /reading/ || fas fa-book
   # You can add a secondary menu like follow.
   # xxx1: javascript:; || fa(s|r|l|d|b) fa-xxx
@@ -143,7 +143,7 @@ header:
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url: /images/header5.jpg
+    url: /blog/images/header5.jpg
   # Mask effect of the background image.
   mask:
     enable: false
@@ -287,7 +287,7 @@ author:
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url: /images/profile.jpeg
+    url: /blog/images/profile.jpeg
     # If true, the avatar would be displayed in a circle.
     rounded: true
     # Opacity of avatar (value: 0 ~ 1)
