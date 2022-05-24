@@ -6,7 +6,7 @@
 <meta property="og:image" content="https://kallechen.github.io/blog/assets/Screen_Shot_2022-01-21_at_2.53.49_PM.png">
 <meta property="og:image" content="https://kallechen.github.io/blog/assets/85596a5a-9bbf-11e6-8aa1-7c8d9829c008.gif">
 <meta property="article:published_time" content="2022-05-24T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-24T09:09:18.336Z">
+<meta property="article:modified_time" content="2022-05-24T09:19:17.147Z">
 <meta property="article:author" content="Kalle Chen">
 <meta property="article:tag" content="tmux">
 <meta name="twitter:card" content="summary">
@@ -62,16 +62,16 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
           <a href="#基本使用" class="heading-link"><i class="fas fa-link"></i></a>基本使用</h2>
       <ul>
 <li><p>開啟一個新的 session</p>
-  <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tmux </span><br><span class="line">or</span><br><span class="line">$ tmux new -s &#123;session name&#125; // create a session with &#123;session name&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+  <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tmux </span><br><span class="line">or</span><br><span class="line">$ tmux new -s &#123;session name&#125; &#x2F;&#x2F; create a session with &#123;session name&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
 </li>
 <li><p>離開 session</p>
-  <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ctrl-b d</span><br></pre></td></tr></table></div></figure>
+  <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ctrl-b d</span><br></pre></td></tr></table></div></figure>
 </li>
 <li><p>進入某個 session</p>
   <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ tmux attach</span><br><span class="line">of </span><br><span class="line">$ tmux attach -t &#123;session name&#125; // enter &#123;session name&#125; session</span><br></pre></td></tr></table></div></figure>
 </li>
 <li><p>查看所有 session</p>
-  <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tmux ls</span><br></pre></td></tr></table></div></figure>
+  <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tmux ls</span><br></pre></td></tr></table></div></figure>
 </li>
 <li><p>關閉 session</p>
   <figure class="highlight jsx"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ctrl-d</span><br><span class="line">or</span><br><span class="line">$ exit</span><br></pre></td></tr></table></div></figure>
@@ -87,7 +87,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
         <h2 id="Oh-My-Tmux"   >
           <a href="#Oh-My-Tmux" class="heading-link"><i class="fas fa-link"></i></a>Oh-My-Tmux</h2>
       <p>而為了簡單設定，我們只需要直接拿別人已經設定好的來用就可以了，用這個方法只需要把他的設定檔複製過來就可以直接套用了。 </p>
-<p>也就是下面這個 gif 範例的設定檔 <code>[on-my-tmux](https://github.com/gpakosz/.tmux)</code> (以下簡稱 omt)</p>
+<p>也就是下面這個 gif 範例的設定檔 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/gpakosz/.tmux" >on-my-tmux</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> (以下簡稱 omt)</p>
 <p><img src="/blog/assets/85596a5a-9bbf-11e6-8aa1-7c8d9829c008.gif" alt="85596a5a-9bbf-11e6-8aa1-7c8d9829c008.gif"></p>
 <p>他的優點是，他就只是一個幫你寫好的 <code>.tmux.conf</code> 檔案，不會動到你電腦上的其他東西。</p>
 <p>照他官網上面寫的，所需要做的事就只是把這個設定檔下載下來後，取代你原本的設定檔。</p>
