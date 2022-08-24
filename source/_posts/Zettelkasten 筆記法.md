@@ -6,7 +6,7 @@ categories:
 	- Productivity
 ---
 
-![](https://www.zebrapen.com/wp-content/uploads/2019/10/10_24_NotesBlog-e1570723912946.jpg)
+![](https://miro.medium.com/max/1838/0*bgEPxNyQ4tI7F8vs.png)
 
  <!-- more -->
 
