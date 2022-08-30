@@ -1,6 +1,6 @@
 ---
 title: 去中心化網站跟 ENS Domain
-data: 2022-08-24
+date: 2022-08-24
 tags: [web3]
 categories:
   - Tutorial
