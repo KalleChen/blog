@@ -1,6 +1,6 @@
 ---
 title: 撲克中的數學
-data: 2022-09-03
+date: 2022-09-03
 tags: [Poker]
 categories:
   - Poker
