@@ -305,13 +305,13 @@ author:
 # If you can`t find a suitable icon, you can choose to display text by adding the `origin:` prefix.
 # e.g. `origin:sf`, so `sf` will be displayed.
 social:
-  email: mailto:chen1082yo@gmail.com || fas fa-envelope
+  email: mailto:kallechen.tw@gmail.com || fas fa-envelope
   github: https://github.com/KalleChen || fab fa-github
-  linkedin: https://www.linkedin.com/in/chia-yu-chen-429459199/ || fab fa-linkedin
+  linkedin: https://www.linkedin.com/in/kallechen/ || fab fa-linkedin
   medium: https://medium.com/@kallechen/ || fab fa-medium
   # google: https://plus.google.com/ || fab fa-google
-  twitter: https://twitter.com/l4ll1p0p/ || fab fa-twitter
-  instagram: https://www.instagram.com/kalle_space// || fab fa-instagram
+  twitter: https://twitter.com/kalle_chen || fab fa-twitter
+  instagram: https://www.instagram.com/kalle_chen17/ || fab fa-instagram
   # youtube: https://youtube.com/ || fab fa-youtube
   # segmentfault: https://segmentfault.com/ || origin:sf
   # weibo: https://weibo.com/ || fab fa-weibo
