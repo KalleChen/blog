@@ -3,7 +3,7 @@ title: Zettelkasten 筆記法筆記法
 date: 2021-08-13 20:47:10
 tags: [Note taking]
 categories:
-	- Productivity
+	- 工具分享
 ---
 
 ![](https://miro.medium.com/max/1838/0*bgEPxNyQ4tI7F8vs.png)

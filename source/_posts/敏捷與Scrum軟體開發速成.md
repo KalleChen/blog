@@ -3,7 +3,7 @@ title: 敏捷與Scrum軟體開發速成
 date: 2022-01-03 20:47:10
 tags: [Work]
 categories:
-	- Productivity
+	- 工具分享
 ---
 
 ![](https://miro.medium.com/max/1400/1*CbtQV5wUNTtRCQlx0p7wkA.png)

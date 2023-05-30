@@ -3,8 +3,7 @@ title: 去中心化網站跟 ENS Domain
 date: 2022-08-24
 tags: [web3]
 categories:
-  - Tutorial
-  - Web3
+  - 技術科普
 ---
 
 ![](https://s3.eu-central-1.amazonaws.com/curaze-web-prod/photos/shares/WEB3-WEB2.0-WEB1.0.png)
