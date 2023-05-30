@@ -1,6 +1,7 @@
 ---
 title: 去中心化網站跟 ENS Domain
 date: 2022-08-24
+updated: 2022-08-24
 tags: [web3]
 categories:
   - 技術科普

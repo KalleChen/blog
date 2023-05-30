@@ -15,7 +15,13 @@ menu:
   archives: 归档
   categories: 分类
   tags: 标签
+  Tags: Tags
   about: 关于
+  工具分享: 工具分享
+  技術科普: 技術科普
+  心情抒發: 心情抒發
+  Poker: Poker
+  演算法: 演算法
 
 # 归档页、分类页、标签页
 page:
@@ -30,6 +36,7 @@ sidebar:
   catalog: 文章目录
   subscribe: 订阅
   archives: 归档
+  工具分享: 工具分享
   categories: 分类
   tags: 标签
   read_info: 你已阅读了

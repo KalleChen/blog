@@ -51,9 +51,14 @@ sougou_site_verification:
 # Select your icon name, see: https://fontawesome.com/icons
 menu:
   home: /blog/ || fas fa-home
-  archives: /blog/archives/ || fas fa-folder-open
-  categories: /blog/categories/ || fas fa-layer-group
-  tags: /blog/tags/ || fas fa-tags
+  # categories: /blog/categories/ || fas fa-layer-group
+  Tags: /blog/tags/ || fas fa-tags
+  工具分享: /blog/categories/工具分享/ || fas fa-folder-open
+  技術科普: /blog/categories/技術科普/ || fas fa-folder-open
+  心情抒發: /blog/categories/心情抒發/ || fas fa-folder-open
+  Poker: /blog/categories/Poker/ || fas fa-folder-open
+  演算法: /blog/categories/演算法/ || fas fa-folder-open
+  # archives: /blog/archives/ || fas fa-folder-open
   # reading: /reading/ || fas fa-book
   # You can add a secondary menu like follow.
   # xxx1: javascript:; || fa(s|r|l|d|b) fa-xxx
@@ -368,7 +373,7 @@ codeblock:
   style: default
   # The theme of code highlight.
   # Optional values: light | dark | ocean
-  highlight: light
+  highlight: dark
   # Whether to wrap when code overflow.
   word_wrap: false
 
@@ -397,14 +402,14 @@ post_meta:
     icon: far fa-calendar-plus
   # The update time of post.
   updated:
-    enable: false
+    enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/icons
     icon: far fa-calendar-check
   # The approximate reading time of post.
   # Dependency: https://github.com/willin/hexo-wordcount/
   # !!! Don't enable this before install dependency by `npm install hexo-wordcount --save` in hexo root directory.
   reading_time:
-    enable: false
+    enable: true
     # Icon name in FontAwesome, see: https://fontawesome.com/icons
     icon: far fa-clock
     # Set reading speed to count reading time.
@@ -442,7 +447,7 @@ post_widget:
     horizon_line: true
   # Article sharing
   share:
-    enable: false
+    enable: true
     # The text displayed before the share button.
     label: "Share to: "
     # Optional values: qzone | qq | weibo | wechat | douban | linkedin | facebook | twitter | google

@@ -1,6 +1,7 @@
 ---
 title: 敏捷與Scrum軟體開發速成
 date: 2022-01-03 20:47:10
+updated: 2022-01-03 20:47:10
 tags: [Work]
 categories:
 	- 工具分享

@@ -1,6 +1,7 @@
 ---
 title: Zettelkasten 筆記法筆記法
 date: 2021-08-13 20:47:10
+updated: 2021-08-13 20:47:10
 tags: [Note taking]
 categories:
 	- 工具分享
