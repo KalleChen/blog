@@ -49,10 +49,16 @@ sougou_site_verification:
 # Usage(With Icon): `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
 # Usage(No Icon)  : `Key: /link/`
 # Select your icon name, see: https://fontawesome.com/icons
+#
+sidebar_menu:
+  categories: /blog/categories/ || fas fa-layer-group
+  tags: /blog/tags/ || fas fa-tags
+  archives: /blog/archives/ || fas fa-folder-open
+
 menu:
   home: /blog/ || fas fa-home
   # categories: /blog/categories/ || fas fa-layer-group
-  Tags: /blog/tags/ || fas fa-tags
+  # Tags: /blog/tags/ || fas fa-tags
   工具分享: /blog/categories/工具分享/ || fas fa-folder-open
   技術科普: /blog/categories/技術科普/ || fas fa-folder-open
   心情抒發: /blog/categories/心情抒發/ || fas fa-folder-open

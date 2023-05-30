@@ -81,20 +81,20 @@ section.sidebar-ov(class=`${isShowToc ? 'hide' : ''}`)
               i(class=theme.icon.feed_rss)
             span= `RSS ${__('sidebar.subscribe')}`
 
-  if theme.menu && (theme.menu.archives || theme.menu.categories || theme.menu.tags)
+  if theme.sidebar_menu && (theme.sidebar_menu.archives || theme.sidebar_menu.categories || theme.sidebar_menu.tags)
     div.sidebar-ov-state
-      if theme.menu.archives
-        - var menuArchives = (theme.menu.archives.split('||')[0] + '').trim();
+      if theme.sidebar_menu.archives
+        - var menuArchives = (theme.sidebar_menu.archives.split('||')[0] + '').trim();
         a.sidebar-ov-state-item.sidebar-ov-state-item--posts(href=menuArchives)
           div.sidebar-ov-state-item__count= site.posts.length
           div.sidebar-ov-state-item__name= __('sidebar.archives')
-      if theme.menu.categories
-        - var menuCategories = (theme.menu.categories.split('||')[0] + '').trim();
+      if theme.sidebar_menu.categories
+        - var menuCategories = (theme.sidebar_menu.categories.split('||')[0] + '').trim();
         a.sidebar-ov-state-item.sidebar-ov-state-item--categories(href=menuCategories)
           div.sidebar-ov-state-item__count= site.categories.length
           div.sidebar-ov-state-item__name= __('sidebar.categories')
-      if theme.menu.tags
-        - var menuTags = (theme.menu.tags.split('||')[0] + '').trim();
+      if theme.sidebar_menu.tags
+        - var menuTags = (theme.sidebar_menu.tags.split('||')[0] + '').trim();
         a.sidebar-ov-state-item.sidebar-ov-state-item--tags(href=menuTags)
           div.sidebar-ov-state-item__count= site.tags.length
           div.sidebar-ov-state-item__name= __('sidebar.tags')
