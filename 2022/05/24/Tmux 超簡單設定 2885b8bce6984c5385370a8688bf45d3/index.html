@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/blog/assets/favicon-16x16.png?v=2.3.0" type="image/png" sizes="16x16"><link rel="icon" href="/blog/assets/favicon-32x32.png?v=2.3.0" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/blog/images/icons/apple-touch-icon.png?v=2.3.0" sizes="180x180"><link rel="mask-icon" href="/blog/images/icons/stun-logo.svg?v=2.3.0" color="#54bcff"><meta name="msapplication-TileImage" content="/blog/images/icons/favicon-144x144.png"><meta name="msapplication-TileColor" content="#000000"><meta property="og:type" content="article">
+<meta property="og:title" content="Tmux 超簡單設定">
+<meta property="og:url" content="https://kallechen.github.io/blog/2022/05/24/Tmux%20%E8%B6%85%E7%B0%A1%E5%96%AE%E8%A8%AD%E5%AE%9A%202885b8bce6984c5385370a8688bf45d3/index.html">
+<meta property="og:site_name" content="Kalle&#39;s Space">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kallechen.github.io/blog/assets/Screen_Shot_2022-01-21_at_2.53.49_PM.png">
+<meta property="og:image" content="https://kallechen.github.io/blog/assets/85596a5a-9bbf-11e6-8aa1-7c8d9829c008.gif">
+<meta property="article:published_time" content="2022-05-24T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-24T00:00:00.000Z">
+<meta property="article:author" content="Kalle Chen">
+<meta property="article:tag" content="tmux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kallechen.github.io/blog/assets/Screen_Shot_2022-01-21_at_2.53.49_PM.png"><title>Tmux 超簡單設定 | Kalle's Space</title><link ref="canonical" href="https://kallechen.github.io/blog/2022/05/24/Tmux%20%E8%B6%85%E7%B0%A1%E5%96%AE%E8%A8%AD%E5%AE%9A%202885b8bce6984c5385370a8688bf45d3/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/blog/css/index.css?v=2.3.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"dark","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/工具分享/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">工具分享</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/技術科普/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">技術科普</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/心情抒發/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">心情抒發</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/Poker/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Poker</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/演算法/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">演算法</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">Tmux 超簡單設定</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-05-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-05-24</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">Reading</span><span class="post-meta-item__value">6m</span></span></div></header><div class="post-body"><p><img src="/blog/assets/Screen_Shot_2022-01-21_at_2.53.49_PM.png" alt="在介面同時上開了 vim，lzd，lg"></p>
+<a id="more"></a>
+
+
+        <h2 id="什麼是-Tmux"   >
+          <a href="#什麼是-Tmux" class="heading-link"><i class="fas fa-link"></i></a>什麼是 Tmux</h2>
+      <p>Tmux 全名是 Terminal Multiplexer，以及我自己的理解的話類似你開了一個 terminal 的 server (session) 在電腦上，當你離開後(關掉你的 terminal)，這個 server 仍然會在後台運作，你也可以隨時的回到這個 server 上，優點是可以保持你的 ssh 連線，不會因為不小心關掉 terminal 而短線。除此之外，每個 session，可以再分為 pane，就是類似分割畫面，讓你可以同時執行不同的指令，如上面那張圖一樣。</p>
+
+        <h2 id="如何安裝"   >
+          <a href="#如何安裝" class="heading-link"><i class="fas fa-link"></i></a>如何安裝</h2>
+      <ul>
+<li><p>Ubuntu / Debian</p>
+  <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tmux</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>macOS</p>
+  <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tmux</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>others</p>
+<ul>
+<li><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://computingforgeeks.com/linux-tmux-cheat-sheet/" >https://computingforgeeks.com/linux-tmux-cheat-sheet/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="基本使用"   >
+          <a href="#基本使用" class="heading-link"><i class="fas fa-link"></i></a>基本使用</h2>
+      <ul>
+<li><p>開啟一個新的 session</p>
+  <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tmux </span><br><span class="line">or</span><br><span class="line">$ tmux new -s &#123;session name&#125; &#x2F;&#x2F; create a session with &#123;session name&#125;</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>離開 session</p>
+  <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ctrl-b d</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>進入某個 session</p>
+  <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ tmux attach</span><br><span class="line">of </span><br><span class="line">$ tmux attach -t &#123;session name&#125; // enter &#123;session name&#125; session</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>查看所有 session</p>
+  <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tmux ls</span><br></pre></td></tr></table></div></figure>
+</li>
+<li><p>關閉 session</p>
+  <figure class="highlight jsx"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ctrl-d</span><br><span class="line">or</span><br><span class="line">$ exit</span><br></pre></td></tr></table></div></figure>
+
+
+</li>
+</ul>
+
+        <h2 id="設定"   >
+          <a href="#設定" class="heading-link"><i class="fas fa-link"></i></a>設定</h2>
+      <p>對於 tmux 的一些客製化設定，可以在 .tmux.conf 這個檔案去設定，例如一些快捷指令或是畫面的調整，詳細的話可以直接參考<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man1/tmux.1.html" >官網</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>的介紹，然而因為這篇文章是希望讓你快速的設定好 tmux 所以不會詳細的介紹要怎麼設定 tmux。</p>
+
+        <h2 id="Oh-My-Tmux"   >
+          <a href="#Oh-My-Tmux" class="heading-link"><i class="fas fa-link"></i></a>Oh-My-Tmux</h2>
+      <p>而為了簡單設定，我們只需要直接拿別人已經設定好的來用就可以了，用這個方法只需要把他的設定檔複製過來就可以直接套用了。 </p>
+<p>也就是下面這個 gif 範例的設定檔 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/gpakosz/.tmux" >on-my-tmux</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> (以下簡稱 omt)</p>
+<p><img src="/blog/assets/85596a5a-9bbf-11e6-8aa1-7c8d9829c008.gif" alt="85596a5a-9bbf-11e6-8aa1-7c8d9829c008.gif"></p>
+<p>他的優點是，他就只是一個幫你寫好的 <code>.tmux.conf</code> 檔案，不會動到你電腦上的其他東西。</p>
+<p>照他官網上面寫的，所需要做的事就只是把這個設定檔下載下來後，取代你原本的設定檔。</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/gpakosz/.tmux.git</span><br><span class="line">$ ln -s -f .tmux/.tmux.conf</span><br><span class="line">$ cp .tmux/.tmux.conf.local .</span><br></pre></td></tr></table></div></figure>
+
+<p>接下來，如果你需要再自己做客製化設定的話，可以直接更改 <code>.tmux.conf.local</code> 這個檔案，安裝完成後你的 tmux 就可以跟上面的一樣了。</p>
+
+        <h3 id="基礎預設"   >
+          <a href="#基礎預設" class="heading-link"><i class="fas fa-link"></i></a>基礎預設</h3>
+      <p>下載完 omt 後，你的 tmux 的指令也會直接使用 omt 的設定，這邊就介紹幾個比較需要知道的，更詳細的可以直接去看他的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man1/tmux.1.html" >官網</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>。</p>
+<ul>
+<li><code>prefix</code> 原本的 tmux prfix 是 ctrl-b，但其實這個很難按，因此 omt 設定成了 ctrl-a</li>
+<li><code>&lt;prefix&gt; -</code> 垂直平分現在的 pane</li>
+<li><code>&lt;prefix&gt; _</code> 水平平分現在的 pane</li>
+<li><code>&lt;prefix&gt; h</code>, <code>&lt;prefix&gt; j</code>, <code>&lt;prefix&gt; k</code> , <code>&lt;prefix&gt; l</code> 如果你是 vim 的使用者的話，你肯定對這個設定再熟悉不過了，上面這四個是用來選取 pane 的，順序是左下上右，如果你不常用 vim 的話可能需要熟悉一下</li>
+<li><code>&lt;prefix&gt; C-h</code>, <code>&lt;prefix&gt; C-l</code> 跟上面的不同，這個是用來選取 window 的</li>
+<li><code>&lt;prefix&gt; C-c</code> 創建一個新的 session</li>
+</ul>
+<p>把以上這些弄熟後，對於基礎的 tmux 使用上就不成問題了。</p>
+
+        <h2 id="結論"   >
+          <a href="#結論" class="heading-link"><i class="fas fa-link"></i></a>結論</h2>
+      <p>如果你需要常常在 terminal 上做事情的，那麼 tmux 絕對是你需要的工具，不管是多視窗還是切換都可以用快速的快捷鍵執行，而且安裝上也超簡單，不需要自己特別學怎麼設定，對於效率上只有益沒有害。但如果你沒有這個需求，tmux 也是可以讓你的 terminal 看起來很酷啦，給外行的看到你鍵盤敲一敲 terminal 的頁面就切來切去，肯定覺得你是個電腦大神。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://kallechen.github.io/blog">Kalle Chen</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://kallechen.github.io/blog/2022/05/24/Tmux%20%E8%B6%85%E7%B0%A1%E5%96%AE%E8%A8%AD%E5%AE%9A%202885b8bce6984c5385370a8688bf45d3/">https://kallechen.github.io/blog/2022/05/24/Tmux%20%E8%B6%85%E7%B0%A1%E5%96%AE%E8%A8%AD%E5%AE%9A%202885b8bce6984c5385370a8688bf45d3/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://kallechen.github.io/blog/tags/tmux/">tmux</a></span></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google">Share to: </div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/blog/2022/08/24/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E7%B6%B2%E7%AB%99%E8%B7%9F%20ENS%20Domain%20c5f4bbf94fce4a3f9f5d9a585f6faa9d/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">去中心化網站跟 ENS Domain</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/blog/2022/01/20/%E5%85%A8%E7%B6%B2%E6%9C%80%E9%A8%B7%E7%9A%84%20Vim%20IDE%20%E8%A8%AD%E5%AE%9A%20cbf00532d17b46d7986062f6356a3556/"><span class="paginator-prev__text">全網最騷的 Vim IDE 設定</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="disqus_thread"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-Tmux"><span class="toc-number">1.</span> <span class="toc-text">
+          什麼是 Tmux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%9D"><span class="toc-number">2.</span> <span class="toc-text">
+          如何安裝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">
+          基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A8%AD%E5%AE%9A"><span class="toc-number">4.</span> <span class="toc-text">
+          設定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Oh-My-Tmux"><span class="toc-number">5.</span> <span class="toc-text">
+          Oh-My-Tmux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A4%8E%E9%A0%90%E8%A8%AD"><span class="toc-number">5.1.</span> <span class="toc-text">
+          基礎預設</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B5%90%E8%AB%96"><span class="toc-number">6.</span> <span class="toc-text">
+          結論</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/blog/images/profile.jpeg" alt="avatar"></div><p class="sidebar-ov-author__text">Just for fun!</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="mailto:kallechen.tw@gmail.com" target="_blank" rel="noopener" data-popover="social.email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a><a class="sidebar-ov-social-item" href="https://github.com/KalleChen" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.linkedin.com/in/kallechen/" target="_blank" rel="noopener" data-popover="social.linkedin" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-linkedin"></i></span></a><a class="sidebar-ov-social-item" href="https://medium.com/@kallechen/" target="_blank" rel="noopener" data-popover="social.medium" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-medium"></i></span></a><a class="sidebar-ov-social-item" href="https://twitter.com/kalle_chen" target="_blank" rel="noopener" data-popover="Twitter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-twitter"></i></span></a><a class="sidebar-ov-social-item" href="https://www.instagram.com/kalle_chen17/" target="_blank" rel="noopener" data-popover="social.instagram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-instagram"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/blog/archives/"><div class="sidebar-ov-state-item__count">14</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/blog/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/blog/tags/"><div class="sidebar-ov-state-item__count">11</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/blog/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Kalle Chen</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.2.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.3.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function loadDisqus () {
+  if (!document.getElementById('disqus_thread')) {
+    return;
+  }
+  if (window.DISQUS) {
+    DISQUS.reset({
+      reload: true,
+      config: function () {
+        this.page.url = 'https://kallechen.github.io/blog/2022/05/24/Tmux%20%E8%B6%85%E7%B0%A1%E5%96%AE%E8%A8%AD%E5%AE%9A%202885b8bce6984c5385370a8688bf45d3/';
+        this.page.identifier = '2022/05/24/Tmux 超簡單設定 2885b8bce6984c5385370a8688bf45d3/';
+        this.page.title = 'Tmux 超簡單設定';
+      }
+    });
+  } else {
+    var d = document;
+    var sc = d.createElement('script');
+    var se = d.createElement('script');
+
+    if (true) {
+      sc.src = 'https://kalles-space.disqus.com/count.js';
+      sc.id = 'dsq-count-scr';
+      sc.async = true;
+      if (false) {
+        sc.setAttribute('data-pjax', '');
+      }
+      (d.head || d.body).appendChild(sc);
+    }
+    se.src = 'https://kalles-space.disqus.com/embed.js';
+    (d.head || d.body).appendChild(se);
+  }
+}
+
+if (false) {
+  loadDisqus();
+} else {
+  window.addEventListener('DOMContentLoaded', loadDisqus, false);
+}</script><script src="/blog/js/utils.js?v=2.3.0"></script><script src="/blog/js/stun-boot.js?v=2.3.0"></script><script src="/blog/js/scroll.js?v=2.3.0"></script><script src="/blog/js/header.js?v=2.3.0"></script><script src="/blog/js/sidebar.js?v=2.3.0"></script></body></html>

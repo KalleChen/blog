@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/blog/assets/favicon-16x16.png?v=2.3.0" type="image/png" sizes="16x16"><link rel="icon" href="/blog/assets/favicon-32x32.png?v=2.3.0" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/blog/images/icons/apple-touch-icon.png?v=2.3.0" sizes="180x180"><link rel="mask-icon" href="/blog/images/icons/stun-logo.svg?v=2.3.0" color="#54bcff"><meta name="msapplication-TileImage" content="/blog/images/icons/favicon-144x144.png"><meta name="msapplication-TileColor" content="#000000"><meta property="og:type" content="article">
+<meta property="og:title" content="撲克中的範圍 - 基礎">
+<meta property="og:url" content="https://kallechen.github.io/blog/2022/11/06/%E6%92%B2%E5%85%8B%E4%B8%AD%E7%9A%84%E7%AF%84%E5%9C%8D%20-%20%E5%9F%BA%E7%A4%8E%20d7b7713a2efa4fd8b21469d5e6792d70/index.html">
+<meta property="og:site_name" content="Kalle&#39;s Space">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pokercalculatorreport.com/wp-content/uploads/2019/07/all-in-poker-chips.png">
+<meta property="article:published_time" content="2022-11-06T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-06T00:00:00.000Z">
+<meta property="article:author" content="Kalle Chen">
+<meta property="article:tag" content="Poker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pokercalculatorreport.com/wp-content/uploads/2019/07/all-in-poker-chips.png"><title>撲克中的範圍 - 基礎 | Kalle's Space</title><link ref="canonical" href="https://kallechen.github.io/blog/2022/11/06/%E6%92%B2%E5%85%8B%E4%B8%AD%E7%9A%84%E7%AF%84%E5%9C%8D%20-%20%E5%9F%BA%E7%A4%8E%20d7b7713a2efa4fd8b21469d5e6792d70/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/blog/css/index.css?v=2.3.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"dark","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/工具分享/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">工具分享</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/技術科普/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">技術科普</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/心情抒發/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">心情抒發</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/Poker/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Poker</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/演算法/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">演算法</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">撲克中的範圍 - 基礎</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2022-11-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2022-11-06</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">Reading</span><span class="post-meta-item__value">5m</span></span></div></header><div class="post-body"><p><img src="https://pokercalculatorreport.com/wp-content/uploads/2019/07/all-in-poker-chips.png"></p>
+<a id="more"></a>
+
+<p>這一章節，我們要談的是撲克中重要的觀念 - 範圍，在了解這個觀念後，在看每手牌時都會有跟之前不一樣的見解，也可以說是進入了撲克中的另一個領域。</p>
+
+        <h1 id="範圍思考-v-s-手牌思考"   >
+          <a href="#範圍思考-v-s-手牌思考" class="heading-link"><i class="fas fa-link"></i></a>範圍思考 v.s. 手牌思考</h1>
+      <p>首先我們來解釋一下何謂範圍，舉個例子，假設你們現在在猜拳，手牌思考就是指你在猜對方會出什麼拳，並且出會贏的那個；而範圍思考則是會去觀察他整體哪一種拳出的比較多，自己則相對出更多會贏的拳。</p>
+<p>回到撲克，手牌思考就是猜對方現在是什麼底牌，並且比較自己的是比他大還是小；而範圍思考則是去推測對方現在的 combo 組合有哪些，並利用對方的動作來讓對方的範圍逐漸縮小。</p>
+
+        <h1 id="Bet-size-amp-Frequency"   >
+          <a href="#Bet-size-amp-Frequency" class="heading-link"><i class="fas fa-link"></i></a>Bet size &amp; Frequency</h1>
+      <p>了解了範圍的定義後，我們來講一下範圍對於我們的 bet size 跟 frequency 的影響（frequency 指的是下注的頻率）</p>
+<p>當我們的範圍優勢越大時，這個條件「允許」我們的 bet size 越大，也「允許」frequency 越高，反之亦然。（允許指的是可以，但不是必要）</p>
+<p>此外，frequency 跟 bet size 也有以下關係</p>
+<ul>
+<li>下注的範圍越寬 = 頻率越高 → 通常 bet size 越小</li>
+<li>下注的範圍越窄 = 頻率越低 → 通常 bet size 越大</li>
+</ul>
+
+        <h1 id="V-S-Bet"   >
+          <a href="#V-S-Bet" class="heading-link"><i class="fas fa-link"></i></a>V.S. Bet</h1>
+      <p>接著我們來談防守時的思考方式</p>
+<ul>
+<li>面對越大的 bet size，我們需要抵抗的頻率會越低 = 範圍越小</li>
+<li>面對越小的 bet size，我們需要抵抗的頻率會越高 = 範圍越寬</li>
+</ul>
+
+        <h1 id="Board-amp-Range-的關係"   >
+          <a href="#Board-amp-Range-的關係" class="heading-link"><i class="fas fa-link"></i></a>Board &amp; Range 的關係</h1>
+      <p>前面講了一些關於範圍所影響到的事情，然而這個範圍其實是會根據情況而不斷改變的。</p>
+<p>我們知道，在 preflop 階段時，我們的範圍其實是按照線型強度來排的，例如 AA 在 preflop 時就是最強的牌，然而每進入一個 street 時，這個強度排名都會根據翻出來的牌來重新分配，例如開牌出了 456，那麼 AA 就不一定是最強的牌了。</p>
+<p>因此在決定自己的範圍時，會需要根據情況來調整牌力的順序，並且從較弱的一邊開始縮減自己的範圍</p>
+
+        <h1 id="應該要思考的事情"   >
+          <a href="#應該要思考的事情" class="heading-link"><i class="fas fa-link"></i></a>應該要思考的事情</h1>
+      <p>接著我們來講講在整個牌局中，對於範圍我們需要去思考的事情</p>
+<ol>
+<li><p>我們的 range</p>
+<p> 這個很直覺，我們不只要思考手上的牌能湊出什麼，而是要思考我們現在在對手心理的範圍是哪裡</p>
+</li>
+<li><p>對手的 range</p>
+<p> 清楚了我們自己的範圍後，接著就是去思考對手的範圍在哪裡，不是猜測對手的牌是不是很大，而是思考對手現在能贏的 combo 有哪些，又有哪些 combo 是詐唬的可能</p>
+</li>
+<li><p>flop / turn / river 如何改變雙方的範圍</p>
+<p> 對於開出了不同的牌，都要去調整雙方的範圍（注意範圍只會縮小不會擴大）</p>
+</li>
+<li><p>什麼的牌對我們的範圍好，什麼牌對我們的手牌好</p>
+<p> 這是兩種不同的思考模式，當牌對我們的範圍好，然而對我們的手牌不好時，我們就可以嘗試詐唬，而當我們的手牌好，對範圍不好時，我們通常會 check</p>
+</li>
+<li><p>我們的手牌在我們整體 range 的哪個位置</p>
+<p> 也就是手牌在我們的範圍中，強度是在哪邊</p>
+</li>
+<li><p>如何分配我們的 range</p>
+<p> 這個就是在了解上面的 5 點後，我們需要去擬定我們的策略，我們自己在不同點上的範圍應該要長怎樣</p>
+</li>
+</ol>
+
+        <h1 id="結論"   >
+          <a href="#結論" class="heading-link"><i class="fas fa-link"></i></a>結論</h1>
+      <p>以上就是範圍在撲克中的一些基礎知識，雖然有點抽象，但是平常可以透過 GTO Wizard 的表來讓自己熟悉在不同位置不同情況下我們的範圍會如何調整。當你可以在整個牌局中以範圍在思考時，會發覺撲克中的另一個世界，也會有另一種樂趣。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://kallechen.github.io/blog">Kalle Chen</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://kallechen.github.io/blog/2022/11/06/%E6%92%B2%E5%85%8B%E4%B8%AD%E7%9A%84%E7%AF%84%E5%9C%8D%20-%20%E5%9F%BA%E7%A4%8E%20d7b7713a2efa4fd8b21469d5e6792d70/">https://kallechen.github.io/blog/2022/11/06/%E6%92%B2%E5%85%8B%E4%B8%AD%E7%9A%84%E7%AF%84%E5%9C%8D%20-%20%E5%9F%BA%E7%A4%8E%20d7b7713a2efa4fd8b21469d5e6792d70/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://kallechen.github.io/blog/tags/Poker/">Poker</a></span></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google">Share to: </div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/blog/2022/11/11/%E6%92%B2%E5%85%8B%E4%B8%AD%E7%9A%84%E7%AF%84%E5%9C%8D%20-%20%E9%80%B2%E9%9A%8E%2083f7310732944ab1a0669398f7b5922a/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">撲克中的範圍 - 進階</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/blog/2022/09/19/Preflop%20%E9%80%B2%E9%9A%8E%20c273ea8d0fe84eb08f1b1b715289cf52/"><span class="paginator-prev__text">Preflop 進階</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="disqus_thread"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AF%84%E5%9C%8D%E6%80%9D%E8%80%83-v-s-%E6%89%8B%E7%89%8C%E6%80%9D%E8%80%83"><span class="toc-number">1.</span> <span class="toc-text">
+          範圍思考 v.s. 手牌思考</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Bet-size-amp-Frequency"><span class="toc-number">2.</span> <span class="toc-text">
+          Bet size &amp; Frequency</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#V-S-Bet"><span class="toc-number">3.</span> <span class="toc-text">
+          V.S. Bet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Board-amp-Range-%E7%9A%84%E9%97%9C%E4%BF%82"><span class="toc-number">4.</span> <span class="toc-text">
+          Board &amp; Range 的關係</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%87%89%E8%A9%B2%E8%A6%81%E6%80%9D%E8%80%83%E7%9A%84%E4%BA%8B%E6%83%85"><span class="toc-number">5.</span> <span class="toc-text">
+          應該要思考的事情</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B5%90%E8%AB%96"><span class="toc-number">6.</span> <span class="toc-text">
+          結論</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/blog/images/profile.jpeg" alt="avatar"></div><p class="sidebar-ov-author__text">Just for fun!</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="mailto:kallechen.tw@gmail.com" target="_blank" rel="noopener" data-popover="social.email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a><a class="sidebar-ov-social-item" href="https://github.com/KalleChen" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.linkedin.com/in/kallechen/" target="_blank" rel="noopener" data-popover="social.linkedin" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-linkedin"></i></span></a><a class="sidebar-ov-social-item" href="https://medium.com/@kallechen/" target="_blank" rel="noopener" data-popover="social.medium" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-medium"></i></span></a><a class="sidebar-ov-social-item" href="https://twitter.com/kalle_chen" target="_blank" rel="noopener" data-popover="Twitter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-twitter"></i></span></a><a class="sidebar-ov-social-item" href="https://www.instagram.com/kalle_chen17/" target="_blank" rel="noopener" data-popover="social.instagram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-instagram"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/blog/archives/"><div class="sidebar-ov-state-item__count">14</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/blog/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/blog/tags/"><div class="sidebar-ov-state-item__count">11</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/blog/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Kalle Chen</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.2.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.3.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function loadDisqus () {
+  if (!document.getElementById('disqus_thread')) {
+    return;
+  }
+  if (window.DISQUS) {
+    DISQUS.reset({
+      reload: true,
+      config: function () {
+        this.page.url = 'https://kallechen.github.io/blog/2022/11/06/%E6%92%B2%E5%85%8B%E4%B8%AD%E7%9A%84%E7%AF%84%E5%9C%8D%20-%20%E5%9F%BA%E7%A4%8E%20d7b7713a2efa4fd8b21469d5e6792d70/';
+        this.page.identifier = '2022/11/06/撲克中的範圍 - 基礎 d7b7713a2efa4fd8b21469d5e6792d70/';
+        this.page.title = '撲克中的範圍 - 基礎';
+      }
+    });
+  } else {
+    var d = document;
+    var sc = d.createElement('script');
+    var se = d.createElement('script');
+
+    if (true) {
+      sc.src = 'https://kalles-space.disqus.com/count.js';
+      sc.id = 'dsq-count-scr';
+      sc.async = true;
+      if (false) {
+        sc.setAttribute('data-pjax', '');
+      }
+      (d.head || d.body).appendChild(sc);
+    }
+    se.src = 'https://kalles-space.disqus.com/embed.js';
+    (d.head || d.body).appendChild(se);
+  }
+}
+
+if (false) {
+  loadDisqus();
+} else {
+  window.addEventListener('DOMContentLoaded', loadDisqus, false);
+}</script><script src="/blog/js/utils.js?v=2.3.0"></script><script src="/blog/js/stun-boot.js?v=2.3.0"></script><script src="/blog/js/scroll.js?v=2.3.0"></script><script src="/blog/js/header.js?v=2.3.0"></script><script src="/blog/js/sidebar.js?v=2.3.0"></script></body></html>
