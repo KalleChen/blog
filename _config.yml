@@ -5,8 +5,8 @@
 # Site
 title: Kalle's Space
 subtitle: ''
-description: ''
-keywords: 部落格, 心得, 技術
+description: '這裡是一個分享技術、資訊、書評、跟人生哲理的地方'
+keywords: 部落格,心得,技術
 author: Kalle Chen
 language: en
 timezone: ''
@@ -140,3 +140,6 @@ deploy:
   # google_host: https://yoursite.com/
   # # 存放 google key 的 json 文件，放于网站根目录
   # google_key_file: google_key.json
+  #
+sitemap:
+path: sitemap.xml
