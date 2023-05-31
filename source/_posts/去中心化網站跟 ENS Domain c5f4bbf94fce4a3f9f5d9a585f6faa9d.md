@@ -5,6 +5,8 @@ updated: 2022-08-24
 tags: [web3]
 categories:
   - 技術科普
+keywords: web3, blockchain, 區塊鏈, 去中心, 網頁, ENS
+thumbnail: https://s3.eu-central-1.amazonaws.com/curaze-web-prod/photos/shares/WEB3-WEB2.0-WEB1.0.png
 ---
 
 ![](https://s3.eu-central-1.amazonaws.com/curaze-web-prod/photos/shares/WEB3-WEB2.0-WEB1.0.png)

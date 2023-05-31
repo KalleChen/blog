@@ -5,6 +5,8 @@ updated: 2021-08-13 20:47:10
 tags: [Note taking]
 categories:
 	- 工具分享
+keywords: zettekasten, 卡片盒筆技法, 筆記, 教學
+thumbnail: https://miro.medium.com/max/1838/0*bgEPxNyQ4tI7F8vs.png
 ---
 
 ![](https://miro.medium.com/max/1838/0*bgEPxNyQ4tI7F8vs.png)

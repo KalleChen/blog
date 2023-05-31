@@ -5,6 +5,8 @@ updated: 2022-09-03
 tags: [Poker]
 categories:
   - Poker
+keywords: poker, 撲克
+thumbnail: /撲克中的數學/yhjqrfnfpcr116996.jpg
 ---
 
 ![yhjqrfnfpcr116996.jpg](/blog/assets/yhjqrfnfpcr116996.jpg)

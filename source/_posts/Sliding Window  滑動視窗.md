@@ -5,6 +5,8 @@ updated: 2023-05-31
 tags: [algorithm]
 categories:
   - 演算法
+keywords: sliding window, algorithm, 演算法, 教學, leetcode
+thumbnail: /演算法系列#1 Sliding Window 滑動視窗/sliding-window.png
 ---
 
 ![](/blog/assets/sliding-window.png)

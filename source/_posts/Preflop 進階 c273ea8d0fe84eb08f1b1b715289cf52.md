@@ -5,6 +5,8 @@ updated: 2022-9-19
 tags: [Poker]
 categories:
   - Poker
+keywords: poker, 撲克
+thumbnail: /Preflop 進階/preflop.webp
 ---
 
 ![](/blog/assets/preflop.webp)

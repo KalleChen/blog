@@ -5,6 +5,8 @@ updated: 2023-06-01
 tags: [algorithm]
 categories:
   - 演算法
+keywords: two pointer, algorithm, 演算法, 教學, leetcode
+thumbnail: /演算法系列#2 Two Pointer or Iterators/two-pointer.png
 ---
 
 ![](/blog/assets/two-pointer.png)

@@ -5,6 +5,8 @@ updated: 2022-01-03 20:47:10
 tags: [Work]
 categories:
 	- 工具分享
+keywords: scrum, 敏捷開發
+thumbnail: https://miro.medium.com/max/1400/1*CbtQV5wUNTtRCQlx0p7wkA.png
 ---
 
 ![](https://miro.medium.com/max/1400/1*CbtQV5wUNTtRCQlx0p7wkA.png)
