@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kallechen.github.io/blog/%E6%B7%BA%E8%AB%87%20SEO%20%E7%9A%84%E6%A6%82%E5%BF%B5%E8%88%87%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2023-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kallechen.github.io/blog/Two%20Pointer%20or%20Iterators/</loc>
     
     <lastmod>2023-06-01</lastmod>
@@ -130,7 +139,7 @@
   <url>
     <loc>https://kallechen.github.io/blog/googlef3af149c08724ac2.html</loc>
     
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -166,7 +175,7 @@
 
   <url>
     <loc>https://kallechen.github.io/blog</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -174,77 +183,84 @@
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/Poker/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/algorithm/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/tmux/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/Note-taking/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/Vim/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/Neovim/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/web3/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/Work/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kallechen.github.io/blog/tags/SEO/</loc>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/%E4%BA%BA%E7%94%9F/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/tags/%E5%8B%95%E7%95%AB/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -253,35 +269,35 @@
   
   <url>
     <loc>https://kallechen.github.io/blog/categories/Poker/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/categories/%E6%BC%94%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/categories/%E6%8A%80%E8%A1%93%E7%A7%91%E6%99%AE/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kallechen.github.io/blog/categories/%E5%BF%83%E6%83%85%E6%8A%92%E7%99%BC/</loc>
-    <lastmod>2023-05-31</lastmod>
+    <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -1,3 +1,4 @@
+https://kallechen.github.io/blog/%E6%B7%BA%E8%AB%87%20SEO%20%E7%9A%84%E6%A6%82%E5%BF%B5%E8%88%87%E6%96%B9%E6%B3%95/
 https://kallechen.github.io/blog/Two%20Pointer%20or%20Iterators/
 https://kallechen.github.io/blog/Sliding%20Window%20%20%E6%BB%91%E5%8B%95%E8%A6%96%E7%AA%97/
 https://kallechen.github.io/blog/%E8%A6%81%E4%B8%8D%E8%A6%81...%E4%B8%80%E8%B5%B7%E6%BA%BA%E6%B0%B4%EF%BC%88%E8%97%8D%E8%89%B2%E6%99%82%E6%9C%9F%E4%B8%AD%E6%88%91%E6%84%9F%E8%A7%B8%E6%9C%80%E6%B7%B1%E7%9A%84%E4%B8%80%E6%AE%B5%EF%BC%89/
@@ -25,6 +26,7 @@ https://kallechen.github.io/blog/tags/Vim/
 https://kallechen.github.io/blog/tags/Neovim/
 https://kallechen.github.io/blog/tags/web3/
 https://kallechen.github.io/blog/tags/Work/
+https://kallechen.github.io/blog/tags/SEO/
 https://kallechen.github.io/blog/tags/%E4%BA%BA%E7%94%9F/
 https://kallechen.github.io/blog/tags/%E5%BF%83%E5%BE%97/
 https://kallechen.github.io/blog/tags/%E5%8B%95%E7%95%AB/
