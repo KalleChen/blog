@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kallechen.github.io/blog/Fast%20and%20Slow%20Pointer/</loc>
+    
+    <lastmod>2023-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kallechen.github.io/blog/%E6%B7%BA%E8%AB%87%20SEO%20%E7%9A%84%E6%A6%82%E5%BF%B5%E8%88%87%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2023-06-02</lastmod>
@@ -182,14 +191,14 @@
 
   
   <url>
-    <loc>https://kallechen.github.io/blog/tags/Poker/</loc>
+    <loc>https://kallechen.github.io/blog/tags/algorithm/</loc>
     <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kallechen.github.io/blog/tags/algorithm/</loc>
+    <loc>https://kallechen.github.io/blog/tags/Poker/</loc>
     <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -268,14 +277,14 @@
 
   
   <url>
-    <loc>https://kallechen.github.io/blog/categories/Poker/</loc>
+    <loc>https://kallechen.github.io/blog/categories/%E6%BC%94%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kallechen.github.io/blog/categories/%E6%BC%94%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://kallechen.github.io/blog/categories/Poker/</loc>
     <lastmod>2023-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
