@@ -74,7 +74,7 @@ SEO 全名 Search Engine Optimization，直接翻譯就是搜尋引擎的優化�
 
 ### robots.txt
 
-obots.txt 通常儲存在一個網站的根目錄上，主要是用於阻止搜尋引擎去檢索在 robots.txt 裡面提及的頁面，因為被阻擋檢索了因此也不會被索引
+robots.txt 通常儲存在一個網站的根目錄上，主要是用於阻止搜尋引擎去檢索在 robots.txt 裡面提及的頁面，因為被阻擋檢索了因此也不會被索引
 
 然而大部分情況我們都不會使用 robots.txt 來阻止搜尋引擎檢索我們的網站，除非這個頁面對整體 SEO 是有負面影響的，不然通常情況使用 meta robot 來阻止搜尋引擎控制索引就可以了
 
@@ -129,7 +129,7 @@ meta robot 的標籤如下
 最常使用的是
 
 ```html
-<meta name="robots" contend="noindex, follow"
+<meta name="robots" contend="noindex, follow">
 ```
 
 不要索引我的頁面但是請正常檢索，因為通常有些頁面是你不希望使用者搜尋到的，但是其內容其實有助於提高你的 SEO，例如站內搜尋結果的網頁等
