@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/blog/assets/favicon-16x16.png?v=2.3.0" type="image/png" sizes="16x16"><link rel="icon" href="/blog/assets/favicon-32x32.png?v=2.3.0" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="/blog/images/icons/apple-touch-icon.png?v=2.3.0" sizes="180x180"><link rel="mask-icon" href="/blog/images/icons/stun-logo.svg?v=2.3.0" color="#54bcff"><meta name="msapplication-TileImage" content="/blog/images/icons/favicon-144x144.png"><meta name="msapplication-TileColor" content="#000000"><meta property="og:type" content="article">
+<meta property="og:title" content="淺談瀏覽器事件機制 Event Bubbling, Event Capturing, Event Delegation">
+<meta property="og:url" content="https://kallechen.github.io/blog/%E6%B7%BA%E8%AB%87%E7%80%8F%E8%A6%BD%E5%99%A8%E4%BA%8B%E4%BB%B6%E6%A9%9F%E5%88%B6Event%20Bubbling,%20Event%20Capturing,%20Event%20Delegation/index.html">
+<meta property="og:site_name" content="Kalle&#39;s Space">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kallechen.github.io/blog/assets/js_event.png">
+<meta property="article:published_time" content="2023-06-04T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-04T00:00:00.000Z">
+<meta property="article:author" content="Kalle Chen">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="瀏覽器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kallechen.github.io/blog/assets/js_event.png"><title>淺談瀏覽器事件機制 Event Bubbling, Event Capturing, Event Delegation | Kalle's Space</title><link ref="canonical" href="https://kallechen.github.io/blog/%E6%B7%BA%E8%AB%87%E7%80%8F%E8%A6%BD%E5%99%A8%E4%BA%8B%E4%BB%B6%E6%A9%9F%E5%88%B6Event%20Bubbling,%20Event%20Capturing,%20Event%20Delegation/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/blog/css/index.css?v=2.3.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":true},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"dark","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"Copy","copySuccess":"Copy Success","copyError":"Copy Error"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/工具分享/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">工具分享</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/技術科普/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">技術科普</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/心情抒發/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">心情抒發</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/Poker/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Poker</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/blog/categories/演算法/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">演算法</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">淺談瀏覽器事件機制 Event Bubbling, Event Capturing, Event Delegation</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2023-06-04</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2023-06-04</span></span><span class="post-meta-item post-meta-item--readtime"><span class="post-meta-item__icon"><i class="far fa-clock"></i></span><span class="post-meta-item__info">Reading</span><span class="post-meta-item__value">5m</span></span></div></header><div class="post-body"><p><img src="/blog/assets/js_event.png"></p>
+<a id="more"></a>
+
+
+        <h1 id="Event-Bubbling"   >
+          <a href="#Event-Bubbling" class="heading-link"><i class="fas fa-link"></i></a>Event Bubbling</h1>
+      <p>指的是當一個元素觸發了某個事件，例如 click，那麼這個事件被此元件的 event handler 處理後會接著傳給此元素上層的父元素中的 Event handler，並接著再傳給上層元素，直到最上層</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;form&#x27;)&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;div&#x27;)&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;p&#x27;)&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>例如上面這裡，加入 p 元素被點擊時，會依序執行 p -&gt; div -&gt; form 各自的 onclick function</p>
+<p>而如果想要阻止 event bubbling 的話，可以使用 <code>event.stopPropagation()</code> 這個方法</p>
+
+        <h3 id="event-handler"   >
+          <a href="#event-handler" class="heading-link"><i class="fas fa-link"></i></a>event handler</h3>
+      <p>這邊要特別介紹一下什麼是 <code>event handler</code><br>這是一個非同步的執行或回調函式，用來處理 DOM element 上的各個事件</p>
+<p>而其中 <code>event.target</code> 本身指的是觸發的物件本身，如果需要取得綁定此 event handler 的元素則可以使用 <code>event.currentTarget</code> 或是 <code>this</code> </p>
+<p>像是上面點擊 <code>p</code> 的 <code>form</code> 的 event handler 裡面的 <code>target</code> 就會是 <code>p</code> 而 <code>currentTarget</code> 就會是 <code>form</code></p>
+
+        <h1 id="Event-Capturing"   >
+          <a href="#Event-Capturing" class="heading-link"><i class="fas fa-link"></i></a>Event Capturing</h1>
+      <p>與 Event Bubbling 相反，當事件發生在某個 DOM element 上時，會從最上層的 parent 開始執行各自的 Event handler，直到抵達觸發的 element 時</p>
+<p>一樣舉上面的例子，點擊 <code>p</code> 後順序就會變成 form -&gt; div -&gt; p</p>
+<p>而如果想要設定為 event capturing，可以在 <code>addEventListener</code> 的第三個參數設定為 true（預設為 false）</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">form.addEventListener(<span class="string">&#x27;click&#x27;</span>, handler, <span class="literal">true</span>)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h1 id="Event-Delegation"   >
+          <a href="#Event-Delegation" class="heading-link"><i class="fas fa-link"></i></a>Event Delegation</h1>
+      <p>當如果有很多 element 都有一樣的 Event handler 時，可以利用 Event Bubbling 的特性，再它們的共同父級元素新增 event handler，這樣就不需要每個元素都各自設定自己的 event handler 了</p>
+<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">id</span>=<span class="string">&quot;list&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-num</span>=<span class="string">&quot;1&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>1<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-num</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>2<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-num</span>=<span class="string">&quot;3&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>3<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-num</span>=<span class="string">&quot;4&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span>4<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>例如以上，我們就可以只在 <code>ol</code> 上設定 evnet handler 就好</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">list.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> li = e.target.closest(<span class="string">&#x27;li&#x27;</span>)</span><br><span class="line">  <span class="keyword">if</span> (!li || !list.contains(li)) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">  alert(li.dataset.num)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<p>需要注意的是，我們需要檢查觸發這個時間的 target 是不是在這個 list 裡面</p>
+<p>同理，我們也可以利用元素的 attribute 來設定各種需要相同 handler 的元素，並且直接在 document 上新增 event listener 就好，例如 counter 之類的東西</p>
+
+        <h1 id="References"   >
+          <a href="#References" class="heading-link"><i class="fas fa-link"></i></a>References</h1>
+      <ul>
+<li><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://shubo.io/event-bubbling-event-capturing-event-delegation/" >https://shubo.io/event-bubbling-event-capturing-event-delegation/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://kallechen.github.io/blog">Kalle Chen</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://kallechen.github.io/blog/%E6%B7%BA%E8%AB%87%E7%80%8F%E8%A6%BD%E5%99%A8%E4%BA%8B%E4%BB%B6%E6%A9%9F%E5%88%B6Event%20Bubbling,%20Event%20Capturing,%20Event%20Delegation/">https://kallechen.github.io/blog/%E6%B7%BA%E8%AB%87%E7%80%8F%E8%A6%BD%E5%99%A8%E4%BA%8B%E4%BB%B6%E6%A9%9F%E5%88%B6Event%20Bubbling,%20Event%20Capturing,%20Event%20Delegation/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://kallechen.github.io/blog/tags/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://kallechen.github.io/blog/tags/%E7%80%8F%E8%A6%BD%E5%99%A8/">瀏覽器</a></span></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google">Share to: </div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/blog/Cyclic%20sort/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">演算法系列#5 Cyclic Sort</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/blog/Merge%20Intervals/"><span class="paginator-prev__text">演算法系列#4 Merge Intervals</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="disqus_thread"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Event-Bubbling"><span class="toc-number">1.</span> <span class="toc-text">
+          Event Bubbling</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#event-handler"><span class="toc-number">1.0.1.</span> <span class="toc-text">
+          event handler</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Event-Capturing"><span class="toc-number">2.</span> <span class="toc-text">
+          Event Capturing</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Event-Delegation"><span class="toc-number">3.</span> <span class="toc-text">
+          Event Delegation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#References"><span class="toc-number">4.</span> <span class="toc-text">
+          References</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/blog/images/profile.jpeg" alt="avatar"></div><p class="sidebar-ov-author__text">Just for fun!</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="mailto:kallechen.tw@gmail.com" target="_blank" rel="noopener" data-popover="social.email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a><a class="sidebar-ov-social-item" href="https://github.com/KalleChen" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.linkedin.com/in/kallechen/" target="_blank" rel="noopener" data-popover="social.linkedin" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-linkedin"></i></span></a><a class="sidebar-ov-social-item" href="https://medium.com/@kallechen/" target="_blank" rel="noopener" data-popover="social.medium" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-medium"></i></span></a><a class="sidebar-ov-social-item" href="https://twitter.com/kalle_chen" target="_blank" rel="noopener" data-popover="Twitter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-twitter"></i></span></a><a class="sidebar-ov-social-item" href="https://www.instagram.com/kalle_chen17/" target="_blank" rel="noopener" data-popover="social.instagram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-instagram"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/blog/archives/"><div class="sidebar-ov-state-item__count">19</div><div class="sidebar-ov-state-item__name">Archives</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/blog/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">Categories</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/blog/tags/"><div class="sidebar-ov-state-item__count">14</div><div class="sidebar-ov-state-item__name">Tags</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/blog/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Kalle Chen</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.2.0</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.3.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script>function loadDisqus () {
+  if (!document.getElementById('disqus_thread')) {
+    return;
+  }
+  if (window.DISQUS) {
+    DISQUS.reset({
+      reload: true,
+      config: function () {
+        this.page.url = 'https://kallechen.github.io/blog/%E6%B7%BA%E8%AB%87%E7%80%8F%E8%A6%BD%E5%99%A8%E4%BA%8B%E4%BB%B6%E6%A9%9F%E5%88%B6Event%20Bubbling,%20Event%20Capturing,%20Event%20Delegation/';
+        this.page.identifier = '淺談瀏覽器事件機制Event Bubbling, Event Capturing, Event Delegation/';
+        this.page.title = '淺談瀏覽器事件機制 Event Bubbling, Event Capturing, Event Delegation';
+      }
+    });
+  } else {
+    var d = document;
+    var sc = d.createElement('script');
+    var se = d.createElement('script');
+
+    if (true) {
+      sc.src = 'https://kalles-space.disqus.com/count.js';
+      sc.id = 'dsq-count-scr';
+      sc.async = true;
+      if (false) {
+        sc.setAttribute('data-pjax', '');
+      }
+      (d.head || d.body).appendChild(sc);
+    }
+    se.src = 'https://kalles-space.disqus.com/embed.js';
+    (d.head || d.body).appendChild(se);
+  }
+}
+
+if (false) {
+  loadDisqus();
+} else {
+  window.addEventListener('DOMContentLoaded', loadDisqus, false);
+}</script><script src="/blog/js/utils.js?v=2.3.0"></script><script src="/blog/js/stun-boot.js?v=2.3.0"></script><script src="/blog/js/scroll.js?v=2.3.0"></script><script src="/blog/js/header.js?v=2.3.0"></script><script src="/blog/js/sidebar.js?v=2.3.0"></script></body></html>
