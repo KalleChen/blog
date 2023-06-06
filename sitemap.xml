@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kallechen.github.io/blog/Tree%20BFS/</loc>
+    
+    <lastmod>2023-06-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kallechen.github.io/blog/In-Place%20reversal%20of%20linked%20list/</loc>
     
     <lastmod>2023-06-05</lastmod>
