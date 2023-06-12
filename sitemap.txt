@@ -1,3 +1,4 @@
+https://kallechen.github.io/blog/Binary%20Search/
 https://kallechen.github.io/blog/Subsets/
 https://kallechen.github.io/blog/Two%20heaps/
 https://kallechen.github.io/blog/Tree%20DFS/
