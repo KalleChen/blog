@@ -5,7 +5,7 @@ updated: 2023-06-11
 tags: [algorithm]
 categories:
   - 演算法
-thumbnail: /Binary%20Search/top_k.png
+thumbnail: /Top%20K%20elements/top_k.png
 keywords: binary search, tree, algorithm, 演算法, 教學, leetcode
 ---
 
